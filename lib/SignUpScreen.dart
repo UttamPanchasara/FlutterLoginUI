@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_login_ui/SignInScreen.dart';
 
 class SignUpScreen extends StatefulWidget {
   @override
@@ -40,15 +39,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
         // Box decoration takes a gradient
         gradient: LinearGradient(
           // Where the linear gradient begins and ends
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
+          begin: Alignment.topRight,
+          end: Alignment.bottomLeft,
           // Add one stop for each color. Stops should increase from 0 to 1
           colors: [
             // Colors are easy thanks to Flutter's Colors class.
-            Colors.deepPurpleAccent[100],
-            Colors.deepPurpleAccent[200],
-            Colors.purple[900],
-            Colors.purple[900],
+            // Colors are easy thanks to Flutter's Colors class.
+            Colors.lightGreenAccent,
+            Colors.lightGreenAccent,
+            Colors.green,
+            Colors.green,
           ],
         ),
       ),
@@ -56,26 +56,30 @@ class _SignUpScreenState extends State<SignUpScreen> {
         child: Padding(
           padding: EdgeInsets.all(20),
           child: Card(
+            clipBehavior: Clip.antiAlias,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30),
+            ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 Container(
                   height: 100,
                   width: double.maxFinite,
-                  color: Colors.deepPurple,
+                  color: Colors.green,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Padding(
                         padding: EdgeInsets.all(20),
                         child: FloatingActionButton(
-                          backgroundColor: Colors.deepPurpleAccent[100],
+                          backgroundColor: Colors.white,
                           onPressed: () {
                             Navigator.pop(context);
                           },
                           child: Icon(
                             Icons.arrow_back,
-                            color: Colors.deepPurple,
+                            color: Colors.green,
                           ),
                         ),
                       ),
@@ -103,7 +107,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             padding: EdgeInsets.all(10),
                             child: Icon(
                               Icons.email,
-                              color: Colors.deepPurpleAccent[100],
+                              color: Colors.green,
                             ),
                           ),
                           Expanded(
@@ -111,12 +115,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               decoration: InputDecoration(
                                 labelText: 'Email',
                                 focusedBorder: UnderlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: Colors.deepPurple),
+                                  borderSide: BorderSide(color: Colors.green),
                                 ),
                                 enabledBorder: UnderlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: Colors.deepPurple),
+                                  borderSide: BorderSide(color: Colors.green),
                                 ),
                               ),
                             ),
@@ -130,7 +132,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             padding: EdgeInsets.all(10),
                             child: Icon(
                               Icons.perm_identity,
-                              color: Colors.deepPurpleAccent[100],
+                              color: Colors.green,
                             ),
                           ),
                           Expanded(
@@ -138,12 +140,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               decoration: InputDecoration(
                                 labelText: 'Username',
                                 focusedBorder: UnderlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: Colors.deepPurple),
+                                  borderSide: BorderSide(color: Colors.green),
                                 ),
                                 enabledBorder: UnderlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: Colors.deepPurple),
+                                  borderSide: BorderSide(color: Colors.green),
                                 ),
                               ),
                             ),
@@ -157,7 +157,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             padding: EdgeInsets.all(10),
                             child: Icon(
                               Icons.lock,
-                              color: Colors.deepPurpleAccent[100],
+                              color: Colors.green,
                             ),
                           ),
                           Expanded(
@@ -179,12 +179,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   },
                                 ),
                                 focusedBorder: UnderlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: Colors.deepPurple),
+                                  borderSide: BorderSide(color: Colors.green),
                                 ),
                                 enabledBorder: UnderlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: Colors.deepPurple),
+                                  borderSide: BorderSide(color: Colors.green),
                                 ),
                               ),
                             ),
@@ -197,9 +195,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           height: 50,
                           width: double.maxFinite,
                           child: RaisedButton(
+                            shape: new RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(30),
+                            ),
                             onPressed: () {},
                             textColor: Colors.white,
-                            color: Colors.deepPurpleAccent[100],
+                            color: Colors.green,
                             padding: EdgeInsets.all(10),
                             child: Text(
                               "GET STARTED",

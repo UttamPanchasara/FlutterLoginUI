@@ -40,15 +40,15 @@ class _SignInScreenState extends State<SignInScreen> {
         // Box decoration takes a gradient
         gradient: LinearGradient(
           // Where the linear gradient begins and ends
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
           // Add one stop for each color. Stops should increase from 0 to 1
           colors: [
             // Colors are easy thanks to Flutter's Colors class.
-            Colors.deepPurpleAccent[100],
-            Colors.deepPurpleAccent[200],
-            Colors.purple[900],
-            Colors.purple[900],
+            Colors.lightGreenAccent,
+            Colors.lightGreenAccent,
+            Colors.green,
+            Colors.green,
           ],
         ),
       ),
@@ -56,13 +56,17 @@ class _SignInScreenState extends State<SignInScreen> {
         child: Padding(
           padding: EdgeInsets.all(20),
           child: Card(
+            clipBehavior: Clip.antiAlias,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30),
+            ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 Container(
                   height: 100,
                   width: double.maxFinite,
-                  color: Colors.deepPurple,
+                  color: Colors.green,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
@@ -79,7 +83,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       Padding(
                         padding: EdgeInsets.all(20),
                         child: FloatingActionButton(
-                          backgroundColor: Colors.deepPurpleAccent[100],
+                          backgroundColor: Colors.white,
                           onPressed: () {
                             Navigator.push(
                               context,
@@ -89,7 +93,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           },
                           child: Icon(
                             Icons.arrow_forward,
-                            color: Colors.deepPurple,
+                            color: Colors.green,
                           ),
                         ),
                       )
@@ -107,7 +111,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             padding: EdgeInsets.all(10),
                             child: Icon(
                               Icons.perm_identity,
-                              color: Colors.deepPurpleAccent[100],
+                              color: Colors.green,
                             ),
                           ),
                           Expanded(
@@ -116,11 +120,11 @@ class _SignInScreenState extends State<SignInScreen> {
                                 labelText: 'Username',
                                 focusedBorder: UnderlineInputBorder(
                                   borderSide:
-                                      BorderSide(color: Colors.deepPurple),
+                                      BorderSide(color: Colors.green,),
                                 ),
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide:
-                                      BorderSide(color: Colors.deepPurple),
+                                      BorderSide(color: Colors.green,),
                                 ),
                               ),
                             ),
@@ -134,7 +138,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             padding: EdgeInsets.all(10),
                             child: Icon(
                               Icons.lock,
-                              color: Colors.deepPurpleAccent[100],
+                              color: Colors.green,
                             ),
                           ),
                           Expanded(
@@ -157,11 +161,11 @@ class _SignInScreenState extends State<SignInScreen> {
                                 ),
                                 focusedBorder: UnderlineInputBorder(
                                   borderSide:
-                                      BorderSide(color: Colors.deepPurple),
+                                      BorderSide(color: Colors.green,),
                                 ),
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide:
-                                      BorderSide(color: Colors.deepPurple),
+                                      BorderSide(color: Colors.green,),
                                 ),
                               ),
                             ),
@@ -174,9 +178,12 @@ class _SignInScreenState extends State<SignInScreen> {
                           height: 50,
                           width: double.maxFinite,
                           child: RaisedButton(
+                            shape: new RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(30),
+                            ),
                             onPressed: () {},
                             textColor: Colors.white,
-                            color: Colors.deepPurpleAccent[100],
+                            color: Colors.green,
                             padding: EdgeInsets.all(10),
                             child: Text(
                               "SIGN IN",
