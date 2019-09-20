@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login_ui/SignUpScreen.dart';
+import 'package:flutter_login_ui/utils/EnterExitRoute.dart';
 
 class SignInScreen extends StatefulWidget {
   @override
@@ -8,6 +9,9 @@ class SignInScreen extends StatefulWidget {
 
 class _SignInScreenState extends State<SignInScreen> {
   bool passwordVisible;
+
+  final Color accentColor = Colors.orange;
+  final Color darkColor = Colors.black;
 
   @override
   void initState() {
@@ -36,22 +40,7 @@ class _SignInScreenState extends State<SignInScreen> {
   Widget body() {
     return Container(
       // Add box decoration
-      decoration: BoxDecoration(
-        // Box decoration takes a gradient
-        gradient: LinearGradient(
-          // Where the linear gradient begins and ends
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          // Add one stop for each color. Stops should increase from 0 to 1
-          colors: [
-            // Colors are easy thanks to Flutter's Colors class.
-            Colors.lightGreenAccent,
-            Colors.lightGreenAccent,
-            Colors.green,
-            Colors.green,
-          ],
-        ),
-      ),
+      color: darkColor,
       child: Center(
         child: Padding(
           padding: EdgeInsets.all(20),
@@ -66,7 +55,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 Container(
                   height: 100,
                   width: double.maxFinite,
-                  color: Colors.green,
+                  color: accentColor,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
@@ -75,7 +64,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         child: Text(
                           "Login",
                           style: TextStyle(
-                              color: Colors.white,
+                              color: darkColor,
                               fontSize: 24,
                               fontWeight: FontWeight.w400),
                         ),
@@ -83,17 +72,23 @@ class _SignInScreenState extends State<SignInScreen> {
                       Padding(
                         padding: EdgeInsets.all(20),
                         child: FloatingActionButton(
-                          backgroundColor: Colors.white,
+                          backgroundColor: Colors.black,
                           onPressed: () {
-                            Navigator.push(
+                            /*Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => SignUpScreen()),
-                            );
+                            );*/
+
+                            Navigator.push(
+                                context,
+                                EnterExitRoute(
+                                    exitPage: SignInScreen(),
+                                    enterPage: SignUpScreen()));
                           },
                           child: Icon(
                             Icons.arrow_forward,
-                            color: Colors.green,
+                            color: Colors.orangeAccent,
                           ),
                         ),
                       )
@@ -111,20 +106,25 @@ class _SignInScreenState extends State<SignInScreen> {
                             padding: EdgeInsets.all(10),
                             child: Icon(
                               Icons.perm_identity,
-                              color: Colors.green,
+                              color: darkColor,
                             ),
                           ),
                           Expanded(
                             child: TextFormField(
                               decoration: InputDecoration(
                                 labelText: 'Username',
+                                labelStyle: TextStyle(
+                                  color: darkColor,
+                                ),
                                 focusedBorder: UnderlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: Colors.green,),
+                                  borderSide: BorderSide(
+                                    color: darkColor,
+                                  ),
                                 ),
                                 enabledBorder: UnderlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: Colors.green,),
+                                  borderSide: BorderSide(
+                                    color: darkColor,
+                                  ),
                                 ),
                               ),
                             ),
@@ -138,7 +138,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             padding: EdgeInsets.all(10),
                             child: Icon(
                               Icons.lock,
-                              color: Colors.green,
+                              color: darkColor,
                             ),
                           ),
                           Expanded(
@@ -146,6 +146,9 @@ class _SignInScreenState extends State<SignInScreen> {
                               obscureText: passwordVisible,
                               decoration: InputDecoration(
                                 labelText: 'Password',
+                                labelStyle: TextStyle(
+                                  color: darkColor,
+                                ),
                                 suffixIcon: IconButton(
                                   icon: Icon(
                                     passwordVisible
@@ -160,12 +163,14 @@ class _SignInScreenState extends State<SignInScreen> {
                                   },
                                 ),
                                 focusedBorder: UnderlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: Colors.green,),
+                                  borderSide: BorderSide(
+                                    color: darkColor,
+                                  ),
                                 ),
                                 enabledBorder: UnderlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: Colors.green,),
+                                  borderSide: BorderSide(
+                                    color: darkColor,
+                                  ),
                                 ),
                               ),
                             ),
@@ -182,8 +187,8 @@ class _SignInScreenState extends State<SignInScreen> {
                               borderRadius: new BorderRadius.circular(30),
                             ),
                             onPressed: () {},
-                            textColor: Colors.white,
-                            color: Colors.green,
+                            textColor: darkColor,
+                            color: accentColor,
                             padding: EdgeInsets.all(10),
                             child: Text(
                               "SIGN IN",
